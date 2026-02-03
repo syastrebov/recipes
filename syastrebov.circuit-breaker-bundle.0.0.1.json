@@ -1,0 +1,82 @@
+{
+    "manifests": {
+        "syastrebov/circuit-breaker-bundle": {
+            "manifest": {
+                "bundles": {
+                    "CircuitBreakerBundle\\CircuitBreakerBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "config/",
+                    "migrations/": "migrations/"
+                }
+            },
+            "files": {
+                "config/circuit_breaker.yaml": {
+                    "contents": [
+                        "circuit_breaker:",
+                        "    provider: memory",
+                        "    configurations:",
+                        "        default:",
+                        "            retries: 3",
+                        "            closed_threshold: 3",
+                        "            half_open_threshold: 3",
+                        "            retry_interval: 1000",
+                        "            open_timeout: 60",
+                        "            fallback_or_null: false",
+                        ""
+                    ],
+                    "executable": false
+                },
+                "migrations/Version20260203131256.php": {
+                    "contents": [
+                        "<?php",
+                        "",
+                        "declare(strict_types=1);",
+                        "",
+                        "namespace migrations;",
+                        "",
+                        "use Doctrine\\DBAL\\Schema\\Schema;",
+                        "use Doctrine\\DBAL\\Types\\Types;",
+                        "use Doctrine\\Migrations\\AbstractMigration;",
+                        "",
+                        "final class Version20260203131256 extends AbstractMigration",
+                        "{",
+                        "    public function getDescription(): string",
+                        "    {",
+                        "        return 'Create circuit_breaker table';",
+                        "    }",
+                        "",
+                        "    public function up(Schema $schema): void",
+                        "    {",
+                        "        $table = $schema->createTable('circuit_breaker');",
+                        "",
+                        "        $table->addColumn('prefix', Types::STRING, ['length' => 255, 'notnull' => true]);",
+                        "        $table->addColumn('name', Types::STRING, ['length' => 255, 'notnull' => true]);",
+                        "        $table->addColumn('state', Types::STRING, [",
+                        "            'length' => 10,",
+                        "            'notnull' => false,",
+                        "            'default' => 'closed',",
+                        "        ]);",
+                        "        $table->addColumn('state_timestamp', Types::INTEGER, ['notnull' => false]);",
+                        "        $table->addColumn('failed_attempts', Types::INTEGER, ['notnull' => true, 'default' => 0]);",
+                        "        $table->addColumn('half_open_attempts', Types::INTEGER, ['notnull' => true, 'default' => 0]);",
+                        "",
+                        "        $table->setPrimaryKey(['prefix', 'name']);",
+                        "    }",
+                        "",
+                        "    public function down(Schema $schema): void",
+                        "    {",
+                        "        $schema->dropTable('circuit_breaker');",
+                        "    }",
+                        "}",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "4939b7c098e0d918b1c631fbb405ffb67137dcd5"
+        }
+    }
+}

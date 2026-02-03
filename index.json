@@ -1,0 +1,20 @@
+{
+    "aliases": [],
+    "recipes": {
+        "syastrebov/circuit-breaker-bundle": [
+            "0.0.1"
+        ]
+    },
+    "recipe-conflicts": [],
+    "versions": [],
+    "branch": "tree",
+    "is_contrib": false,
+    "_links": {
+        "repository": "github.com/syastrebov/recipes",
+        "origin_template": "{package}:{version}@github.com/syastrebov/recipes:tree",
+        "recipe_template": "https://raw.githubusercontent.com/syastrebov/recipes/main/{package_dotted}.{version}.json",
+        "recipe_template_relative": "{package_dotted}.{version}.json",
+        "archived_recipes_template": "https://raw.githubusercontent.com/syastrebov/recipes/main/archived/{package_dotted}/{ref}.json",
+        "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
+    }
+}

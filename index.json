@@ -2,11 +2,11 @@
     "aliases": [],
     "recipes": {
         "syastrebov/circuit-breaker-bundle": [
-            "1.0"
+            "0.1.0"
         ]
     },
     "recipe-conflicts": [],
-    "versions": ["1.0"],
+    "versions": [],
     "branch": "tree",
     "is_contrib": false,
     "_links": {

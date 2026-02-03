@@ -2,7 +2,7 @@
     "aliases": [],
     "recipes": {
         "syastrebov/circuit-breaker-bundle": [
-            "0.1.0"
+            "0.1"
         ]
     },
     "recipe-conflicts": [],

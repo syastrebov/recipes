@@ -13,7 +13,7 @@
                 }
             },
             "files": {
-                "config/circuit_breaker.yaml": {
+                "config/packages/circuit_breaker.yaml": {
                     "contents": [
                         "circuit_breaker:",
                         "    provider: memory",

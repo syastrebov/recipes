@@ -6,7 +6,7 @@
         ]
     },
     "recipe-conflicts": [],
-    "versions": [],
+    "versions": ["0.0.1"],
     "branch": "tree",
     "is_contrib": false,
     "_links": {

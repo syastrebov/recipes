@@ -1,9 +1,0 @@
-{
-  "bundles": {
-    "CircuitBreakerBundle\\CircuitBreakerBundle": ["all"]
-  },
-  "copy-from-recipe": {
-    "config/": "config/",
-    "migrations/": "migrations/"
-  }
-}
